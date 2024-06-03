@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="container w-4/5 flex-col m-auto px-10 justify-between min-h-screen" >
+        <div className=" flex w-full m-auto flex-col px-7 justify-between min-h-screen" >
           <Navbar />
           {children}
           <Footer />

@@ -6,9 +6,3 @@ body {
   background-color: rgb(24, 24, 58);
   color: white;
 }
-
-.container{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
