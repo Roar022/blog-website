@@ -20,12 +20,24 @@ const Links = () => {
       path: "/blog",
     },
   ];
-// Temporary
+  // Temporary
+  const session = true;
+  const isAdmin = false;
   return (
     <div className="flex justify-center gap-6">
       {links.map((link) => (
         <NavLink item={link} key={link.title} />
       ))}
+      {session ? (
+        <>
+          {isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
+          <button>Logout</button>
+        </>
+      ) : (
+        <>
+          <NavLink item={{ title: "Login", path: "/login" }} />
+        </>
+      )}
     </div>
   );
 };
