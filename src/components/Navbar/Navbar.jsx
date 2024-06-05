@@ -2,12 +2,13 @@
 
 import React from "react";
 import Links from "./links/Links";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <div className="flex justify-between p-5">
-      <div className="font-bold text-2xl px-10 ">Logo</div>
-      <div className="px-10" >
+      <Link href="/" className="font-bold text-2xl ">Logo</Link>
+      <div className="" >
         <Links />
       </div>
     </div>

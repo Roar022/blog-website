@@ -16,6 +16,7 @@ module.exports = {
     screens:{
       'md': {'max': '767px'},
       'tablet': '767px',
+      'laptop': '1000px',
     }
   },
   plugins: [],

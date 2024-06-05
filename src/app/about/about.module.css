@@ -1,0 +1,13 @@
+.box{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.box h1{
+    color: rgb(56, 56, 255);
+    font-weight: 600;
+    font-size: 26px;
+}
+.box p{
+    font-size: 12px;
+}
