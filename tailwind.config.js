@@ -17,7 +17,12 @@ module.exports = {
       'md': {'max': '767px'},
       'tablet': '767px',
       'laptop': '1000px',
+    },
+    flex: {
+      '2': '2 2 0%',  // flex: 2;
+      '1': '1 1 0%',  // flex: 1;
     }
+
   },
   plugins: [],
 };
