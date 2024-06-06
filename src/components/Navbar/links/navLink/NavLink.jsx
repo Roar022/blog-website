@@ -12,7 +12,7 @@ const NavLink = ({ item }) => {
   return (
     <Link
       href={item.path}
-      className={`px-4 py-3 ${
+      className={`px-4 py-3  items-center justify-center ${
         isActive
           ? "bg-white text-black rounded-full"
           : "active:bg-white active:text-black active:rounded-full"
