@@ -3,9 +3,9 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="flex items-center gap-10">
-      <div className="h-96 flex-1 relative">
-        <Image src="/contact.png" alt="" fill className="object-contain" />
+    <div className="flex md:flex-col items-center gap-10">
+      <div className="h-96 flex-1 relative md:h-36 md:w-full md:flex-2">
+        <Image src="/contact.png" alt="" fill className="object-contain md:h-36" />
       </div>
       <div className="flex-1">
         <form action="" className="flex flex-col gap-3">
