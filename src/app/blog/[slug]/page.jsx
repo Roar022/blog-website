@@ -1,14 +1,25 @@
 import PostUser from "@/components/PostUser/PostUser";
+import { getPost } from "@/lib/data";
 import Image from "next/image";
 import React, { Suspense } from "react";
-
-const SinglePostData = async ({ slug }) => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
-  if (!res.ok) {
-    throw new Error("Something went Wrong");
+const SinglePostData = async (slug) => {
+  try {
+    const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+    if (!res.ok) {
+      console.error(`Error: ${res.status} - ${res.statusText}`);
+      if (res.status === 404) {
+        throw new Error("Post not found");
+      } else {
+        throw new Error(`Error: ${res.status} - ${res.statusText}`);
+      }
+    }
+    return res.json();
+  } catch (error) {
+    console.error("Fetch error:", error);
+    throw new Error("Something went wrong");
   }
-  return res.json();
 };
+
 // const SingleUserData = async ({slug}) => {
 //   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${slug}`);
 //   if (!res.ok) {
@@ -18,8 +29,10 @@ const SinglePostData = async ({ slug }) => {
 // };
 
 const SinglePost = async ({ params }) => {
-  // console.log(params);
-  const post = await SinglePostData(params);
+  const {slug} = params
+  console.log(params);
+  // const post = await getPost(params);
+  const post = await SinglePostData(slug);
   return (
     <div className="flex gap-24 w-11/12 items-center justify-center ">
       <div className="relative md:hidden flex-1 h-96 bg-blue-200">
@@ -40,15 +53,15 @@ const SinglePost = async ({ params }) => {
             <span className="text-gray-500 font-bold">Author</span>
             <span className="text-lg font-bold">Jerry</span>
           </div> */}
-          <Suspense fallback={<div>Loading....</div>}>
+          {/* <Suspense fallback={<div>Loading....</div>}>
             <PostUser userId={post.userId} />
-          </Suspense>
+          </Suspense> */}
           <div className=" w-1/5 flex flex-col">
             <span className="text-gray-500 font-bold">Published</span>
             <span className="text-lg font-bold">01.01.2003</span>
           </div>
         </div>
-        <div>{post.body}</div>
+        <div>{post.desc}</div>
       </div>
     </div>
   );

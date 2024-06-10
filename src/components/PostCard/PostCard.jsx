@@ -21,7 +21,7 @@ const PostCard = ({post}) => {
         <p className="text-gray-400 mb-5 w-11/12">
           {post.body}
         </p>
-        <Link href={`/blog/${post.id}`} className="font-bold underline" >Read More</Link>
+        <Link href={`/blog/${post.slug}`} className="font-bold underline" >Read More</Link>
       </div>
     </div>
   );

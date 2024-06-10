@@ -13,6 +13,7 @@ const Contact = () => {
             className="p-4 rounded-md bg-cyan-900 text-white"
             type="text"
             placeholder="Name And Surname"
+            name=""
           />
           <input
             className="p-4 rounded-md bg-cyan-900 text-white"
