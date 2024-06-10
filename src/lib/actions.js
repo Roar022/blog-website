@@ -1,9 +1,10 @@
+"use server";
 import { revalidatePath } from "next/cache";
 import { Post } from "./models";
 import { ConnectToDb } from "./utils";
+import { signIn, signOut } from "./auth";
 
 export const addPost = async (formdata) => {
-  "use server";
   const { title, desc, userId, slug } = Object.fromEntries(formdata);
   try {
     ConnectToDb();
@@ -25,7 +26,7 @@ export const addPost = async (formdata) => {
 };
 
 export const deletePost = async (formdata) => {
-  "use server";
+//   "use server";
   const { id } = Object.fromEntries(formdata);
   try {
     // const {id}
@@ -39,3 +40,13 @@ export const deletePost = async (formdata) => {
     throw new Error("Something went wrong");
   }
 };
+
+export const handleGithubLogin = async () => {
+    // "use server";
+    await signIn("github");
+    // revalidatePath("/login")
+  };
+export const handleLogout = async () => {
+    // "use server";
+    await signOut();
+  };
