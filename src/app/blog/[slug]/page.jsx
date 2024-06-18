@@ -30,7 +30,7 @@ const SinglePostData = async (slug) => {
 
 const SinglePost = async ({ params }) => {
   const {slug} = params
-  console.log(params);
+  // console.log(params);
   // const post = await getPost(params);
   const post = await SinglePostData(slug);
   return (
