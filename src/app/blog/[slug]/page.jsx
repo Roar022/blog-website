@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { Suspense } from "react";
 const SinglePostData = async (slug) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+    const res = await fetch(`https://blog-website-five-taupe.vercel.app/api/blog/${slug}`);
     if (!res.ok) {
       console.error(`Error: ${res.status} - ${res.statusText}`);
       if (res.status === 404) {
