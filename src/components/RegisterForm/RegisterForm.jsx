@@ -14,7 +14,7 @@ const RegisterForm = () => {
   },[state?.success,router])
   return (
     <form
-      className=" bg-violet-900 rounded-lg items-center flex flex-col p-3"
+      className=" rounded-lg items-center flex flex-col p-3"
       action={formAction}
     >
       <input
@@ -44,8 +44,11 @@ const RegisterForm = () => {
       <button className="bg-blue-700 p-3 m-2 rounded-lg" type="submit">
         Register
       </button>
+      <p  className="bg-red-200 text-red-900 px-2 rounded-xl my-2" >
+
       {state?.error}
-      <Link href="/login" >
+      </p>
+      <Link href="/login" className="text-white" >
       Have an Account? Login</Link>
     </form>
   );

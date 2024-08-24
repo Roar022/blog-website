@@ -44,7 +44,10 @@ const LoginForm = () => {
           </button>
         </form>
       </div>
+      <p className="bg-red-200 text-red-900 px-2 rounded-xl my-2" >
       {state?.error}
+
+      </p>
       <Link href="/register">Don't have an Account? Register</Link>
     </>
   );

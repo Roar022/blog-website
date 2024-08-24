@@ -130,8 +130,17 @@ export const register = async (prevstate, formdata) => {
 
 export const login = async (prev, formdata) => {
   const { username, password } = Object.fromEntries(formdata);
+  
+  if(!username){
+    return { error: "username can't be empty" };
+  }
+  if (!password) {
+    return { error: "Enter password" };
+  }
   try {
-    await signIn("credentials", { username, password });
+    await signIn("credentials", {
+      redirect:false,
+      username, password });
   } catch (error) {
     console.log(error);
     if (error.message.includes("CredentialsSignin")) {
@@ -140,6 +149,8 @@ export const login = async (prev, formdata) => {
     if (error.message.includes("AccessDenied")) {
       return { error: "Access denied for auth" };
     }
-    throw error;
+    else{
+      return { error: "Enter correct username or password" };
+    }
   }
 };
