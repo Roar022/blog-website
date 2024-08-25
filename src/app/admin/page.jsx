@@ -11,23 +11,24 @@ const AdminPage = async () => {
   // console.log(session);
   return (
     <div>
-      <div>
-        <div>
+      <div className="flex justify-center " >
+        <div className="flex-1 mr-10" >
           <Suspense fallback={<div>Loading...</div>}>
             <AdminPosts />
           </Suspense>
         </div>
-        <div>
+        <div className="flex-1" >
           <AdminPostForm userId={session.user.id} />
         </div>
       </div>
-      <div>
-        <div>
+      <p className="bg-white p-0.5 my-10" ></p>
+      <div className="flex justify-center ">
+        <div className="flex-1 mr-10" >
           <Suspense fallback={<div>Loading...</div>}>
             <AdminUsers />
           </Suspense>
         </div>
-        <div>
+        <div className="flex-1" >
           <AdminUserForm userId={session.user.id} />
         </div>
       </div>

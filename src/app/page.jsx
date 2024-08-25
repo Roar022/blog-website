@@ -1,6 +1,8 @@
 import Image from "next/image";
 
 export default function Home() {
+  console.log(process.env.OPENAI_API_KEY);
+
   return (
     <div className="flex md:flex-col md:mt-10 gap-40">
       <div className="flex-1 flex flex-col gap-10">

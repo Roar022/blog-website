@@ -14,20 +14,21 @@ const AdminPosts = async () => {
       <h1 className="text-2xl font-bold">Posts</h1>
       {posts &&
         posts.map((post) => (
-          <div key={post.id}>
-            <div>
+          <div className="flex my-3 justify-between" key={post.id}>
+            <div className="flex justify-between space-x-4" >
               <Image
                 src={post.img || "/noavatar.png"}
                 alt=""
                 height={50}
                 width={50}
+                className="rounded-full"
               />
-              <span>{post.title}</span>
+              <span className="content-center" >{post.title}</span>
             </div>
             {/* <form action={() => deletePostWithId(post.id)}> */}
               <form action={deletePost}>
                 <input type="hidden" name="id" value={post.id} />
-              <button>Delete</button>
+              <button className="bg-red-800 px-2 py-1 rounded-md" >Delete</button>
             </form>
           </div>
         ))}

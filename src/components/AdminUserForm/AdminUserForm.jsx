@@ -31,8 +31,8 @@ const AdminUserForm = () => {
   // }, [state?.success, router]);
   return (
     <>
-      <h1>Add new User</h1>
-      <form action={formAction}>
+      <h1 className="flex flex-col text-xl ">Add new User</h1>
+      <form action={formAction} className="flex my-2 flex-col" >
         {/* <input
             type="hidden"
             name="userId"
@@ -45,6 +45,7 @@ const AdminUserForm = () => {
           placeholder="Username"
           // value={formData.username}
           // onChange={handleChange}
+          className="mb-2 p-4 rounded-md bg-cyan-900 text-white"
         />
         <input
           type="email"
@@ -52,6 +53,7 @@ const AdminUserForm = () => {
           placeholder="email"
           // value={formData.email}
           // onChange={handleChange}
+          className="mb-2 p-4 rounded-md bg-cyan-900 text-white"
         />
         <input
           type="password"
@@ -59,12 +61,13 @@ const AdminUserForm = () => {
           placeholder="password"
           // value={formData.password}
           // onChange={handleChange}
+          className="mb-2 p-4 rounded-md bg-cyan-900 text-white"
         />
-        <select name="isAdmin">
+        <select name="isAdmin" className="mb-2 p-4 rounded-md bg-cyan-900 text-white">
           <option value="false">User</option>
           <option value="true">Admin</option>
         </select>
-        <button type="submit">Add</button>
+        <button type="submit" className="p-4  bg-blue-800 rounded-lg font-bold">Add</button>
         {/* {state && state?.error} */}
       </form>
     </>
