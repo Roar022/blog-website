@@ -41,7 +41,7 @@ const SinglePost = async ({ params }) => {
   return (
     <div className="flex gap-24 w-11/12 items-center justify-center ">
       <div className="relative md:hidden flex-1 h-96 bg-blue-200">
-        <Image src="/about.png" fill className="object-contain w-2/5" />
+        <Image src={post.img ||"/about.png"} fill className="object-contain w-2/5" />
       </div>
 
       <div className="flex-2 flex-col md:w-3/4 flex gap-5">
@@ -49,7 +49,7 @@ const SinglePost = async ({ params }) => {
 
         <div className="flex items-start gap-10">
           <Image
-            src="/about.png"
+            src={post.img ||"/about.png"}
             width={50}
             height={50}
             className="object-cover rounded-full "
