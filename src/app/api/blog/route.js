@@ -1,7 +1,9 @@
 import { Post } from "@/lib/models";
 import { ConnectToDb } from "@/lib/utils";
 import { NextResponse } from "next/server";
-
+export const fetchCache = 'force-no-store'
+export const revalidate = 0 // seconds
+export const dynamic = 'force-dynamic'
 export const GET=async(req,res)=>{
     try {
         ConnectToDb();

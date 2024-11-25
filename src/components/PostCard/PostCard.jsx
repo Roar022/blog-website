@@ -3,6 +3,12 @@ import Link from "next/link";
 import React from "react";
 
 const PostCard = ({post}) => {
+  const formattedDate = new Date(post.createdAt).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <div className=" bg-blue-950 m-4 flex flex-col p-4 gap-10">
       <div className="flex">
@@ -14,7 +20,8 @@ const PostCard = ({post}) => {
             className=" w-11/12 object-cover"
           />
         </div>
-        <span className="m-auto -rotate-90">01.01.2024</span>
+        <span className="m-auto -rotate-90">{formattedDate}</span>
+        {/* <span className="m-auto -rotate-90">01.01.2024</span> */}
       </div>
       <div className="flex-1 flex flex-col">
         <h1 className="font-bold text-2xl mb-5">{post.title}</h1>

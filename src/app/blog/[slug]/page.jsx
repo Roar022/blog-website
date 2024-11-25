@@ -33,6 +33,11 @@ const SinglePost = async ({ params }) => {
   // console.log(params);
   // const post = await getPost(params);
   const post = await SinglePostData(slug);
+  const formattedDate = new Date(post.createdAt).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
   return (
     <div className="flex gap-24 w-11/12 items-center justify-center ">
       <div className="relative md:hidden flex-1 h-96 bg-blue-200">
@@ -58,7 +63,7 @@ const SinglePost = async ({ params }) => {
           </Suspense> */}
           <div className=" w-1/5 flex flex-col">
             <span className="text-gray-500 font-bold">Published</span>
-            <span className="text-lg font-bold">01.01.2003</span>
+            <span className="text-lg font-bold">{formattedDate}</span>
           </div>
         </div>
         <div>{post.desc}</div>

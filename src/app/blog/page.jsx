@@ -4,8 +4,8 @@ import PostCard from "@/components/PostCard/PostCard";
 import React from "react";
 
 const getPosts = async () => {
-  // const res = await fetch("http:/localhost:3000/api/blog");
-  const res = await fetch("https://blog-website-five-taupe.vercel.app//api/blog");
+  const res = await fetch("http:/localhost:3000/api/blog");
+  // const res = await fetch("https://blog-website-five-taupe.vercel.app/api/blog");
   if (!res.ok) {
     throw new Error("Something is Wrong");
   }
